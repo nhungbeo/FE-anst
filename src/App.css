@@ -5,6 +5,7 @@
 @import './components/animations.css';
 @import './components/Theme/theme.css';
 @import './components/Theme/sun-theme.css';
+@import './components/Report/profile-modern.css';
 
 * {
   margin: 0;
