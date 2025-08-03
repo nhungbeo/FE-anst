@@ -14,6 +14,7 @@ import ModalSignIn from './Auth/ModalSignIn';
 import Authentication from './Auth/Loggin';
 import Profile from './Report/Profile';
 import ThemeDemo from './Theme/ThemeDemo';
+import ThemeShowcase from './Theme/ThemeShowcase';
 
 
 
@@ -59,6 +60,10 @@ function Animation() {
         <Route
           path='/theme-demo'
           element={<ThemeDemo />}
+        />
+        <Route
+          path='/theme-showcase'
+          element={<ThemeShowcase />}
         />
         <Route
           path='*'

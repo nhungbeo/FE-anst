@@ -10,6 +10,26 @@ const ThemeDemo = () => {
       <div className="study">
         <h2 className="textmeno">Theme Demo</h2>
         <p>Current theme: <strong>{theme.name}</strong></p>
+        {theme.name === 'Sun' && (
+          <div style={{ 
+            padding: '15px', 
+            background: 'rgba(255, 255, 255, 0.9)', 
+            borderRadius: '10px',
+            margin: '15px 0',
+            border: '2px solid var(--color-primary)'
+          }}>
+            <h4 style={{ color: 'var(--color-primary)', margin: '0 0 10px 0' }}>
+              🌞 Sun Theme Features
+            </h4>
+            <ul style={{ margin: 0, paddingLeft: '20px', color: 'var(--color-text)' }}>
+              <li>☁️ Animated clouds floating in the sky</li>
+              <li>🌊 Ocean waves with realistic movement</li>
+              <li>⛵ Ships sailing in the distance</li>
+              <li>☀️ Glowing sun with rotating rays</li>
+              <li>🎨 Bright, cheerful color palette</li>
+            </ul>
+          </div>
+        )}
         
         <div style={{ marginTop: '20px' }}>
           <input 

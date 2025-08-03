@@ -66,6 +66,27 @@ const themes = {
       border: 'rgba(245, 158, 11, 0.3)',
       shadow: 'rgba(0, 0, 0, 0.2)',
     }
+  },
+  sun: {
+    name: 'Sun',
+    colors: {
+      primary: '#fbbf24',
+      secondary: '#f59e0b',
+      background: `
+        linear-gradient(to bottom, 
+          #87ceeb 0%, 
+          #87ceeb 40%, 
+          #4682b4 60%, 
+          #1e40af 100%
+        ),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 600'%3E%3Cdefs%3E%3Cstyle%3E.cloud%7Bfill:%23ffffff;opacity:0.8%7D.ship%7Bfill:%23654321%7D.sail%7Bfill:%23ffffff%7D%3C/style%3E%3C/defs%3E%3C!-- Clouds --%3E%3Cellipse class='cloud' cx='200' cy='80' rx='60' ry='30'/%3E%3Cellipse class='cloud' cx='180' cy='70' rx='40' ry='20'/%3E%3Cellipse class='cloud' cx='220' cy='70' rx='40' ry='20'/%3E%3Cellipse class='cloud' cx='600' cy='120' rx='80' ry='40'/%3E%3Cellipse class='cloud' cx='570' cy='105' rx='50' ry='25'/%3E%3Cellipse class='cloud' cx='630' cy='105' rx='50' ry='25'/%3E%3Cellipse class='cloud' cx='1000' cy='90' rx='70' ry='35'/%3E%3Cellipse class='cloud' cx='980' cy='80' rx='45' ry='22'/%3E%3Cellipse class='cloud' cx='1020' cy='80' rx='45' ry='22'/%3E%3C!-- Ships --%3E%3Cg transform='translate(300,400)'%3E%3Crect class='ship' x='0' y='20' width='80' height='15'/%3E%3Cpolygon class='ship' points='0,20 -10,35 90,35 80,20'/%3E%3Crect class='ship' x='35' y='0' width='3' height='25'/%3E%3Cpolygon class='sail' points='38,5 38,20 55,18 55,7'/%3E%3C/g%3E%3Cg transform='translate(800,420)'%3E%3Crect class='ship' x='0' y='15' width='60' height='12'/%3E%3Cpolygon class='ship' points='0,15 -8,27 68,27 60,15'/%3E%3Crect class='ship' x='25' y='0' width='2' height='20'/%3E%3Cpolygon class='sail' points='27,3 27,15 40,13 40,5'/%3E%3C/g%3E%3Cg transform='translate(100,430)'%3E%3Crect class='ship' x='0' y='18' width='50' height='10'/%3E%3Cpolygon class='ship' points='0,18 -6,28 56,28 50,18'/%3E%3Crect class='ship' x='20' y='5' width='2' height='18'/%3E%3Cpolygon class='sail' points='22,7 22,18 32,16 32,9'/%3E%3C/g%3E%3C/svg%3E")
+      `,
+      surface: 'rgba(255, 255, 255, 0.95)',
+      text: '#1f2937',
+      textSecondary: '#4b5563',
+      border: 'rgba(251, 191, 36, 0.3)',
+      shadow: 'rgba(0, 0, 0, 0.1)',
+    }
   }
 };
 

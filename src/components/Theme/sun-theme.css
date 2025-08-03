@@ -1,0 +1,326 @@
+/* Sun Theme Background */
+.sun-theme-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  overflow: hidden;
+}
+
+/* Sky Gradient */
+.sky-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    #87ceeb 0%,     /* Sky blue */
+    #b0e0e6 30%,    /* Powder blue */
+    #87ceeb 50%,    /* Sky blue */
+    #4682b4 70%,    /* Steel blue */
+    #1e40af 100%    /* Deep blue */
+  );
+}
+
+/* Sun */
+.sun {
+  position: absolute;
+  top: 10%;
+  right: 15%;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, #ffd700 0%, #ffb347 70%, #ff8c00 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 50px rgba(255, 215, 0, 0.6);
+  animation: sunGlow 4s ease-in-out infinite;
+}
+
+.sun-rays {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(circle, transparent 60%, rgba(255, 215, 0, 0.2) 70%, transparent 80%);
+  border-radius: 50%;
+  animation: sunRotate 20s linear infinite;
+}
+
+.sun-rays::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  margin: -100px 0 0 -100px;
+  background: 
+    linear-gradient(0deg, transparent 48%, rgba(255, 215, 0, 0.3) 50%, transparent 52%),
+    linear-gradient(45deg, transparent 48%, rgba(255, 215, 0, 0.3) 50%, transparent 52%),
+    linear-gradient(90deg, transparent 48%, rgba(255, 215, 0, 0.3) 50%, transparent 52%),
+    linear-gradient(135deg, transparent 48%, rgba(255, 215, 0, 0.3) 50%, transparent 52%);
+  border-radius: 50%;
+}
+
+/* Clouds */
+.clouds-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+}
+
+.cloud {
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+
+.cloud-part {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50px;
+  position: relative;
+}
+
+.cloud-1 {
+  top: 15%;
+  left: 10%;
+  animation: cloudFloat1 25s ease-in-out infinite;
+}
+
+.cloud-1 .cloud-part:nth-child(1) { width: 60px; height: 60px; }
+.cloud-1 .cloud-part:nth-child(2) { width: 80px; height: 80px; margin-left: -20px; }
+.cloud-1 .cloud-part:nth-child(3) { width: 60px; height: 60px; margin-left: -20px; }
+
+.cloud-2 {
+  top: 25%;
+  left: 60%;
+  animation: cloudFloat2 30s ease-in-out infinite;
+}
+
+.cloud-2 .cloud-part:nth-child(1) { width: 50px; height: 50px; }
+.cloud-2 .cloud-part:nth-child(2) { width: 70px; height: 70px; margin-left: -15px; }
+.cloud-2 .cloud-part:nth-child(3) { width: 50px; height: 50px; margin-left: -15px; }
+
+.cloud-3 {
+  top: 8%;
+  left: 75%;
+  animation: cloudFloat3 35s ease-in-out infinite;
+}
+
+.cloud-3 .cloud-part:nth-child(1) { width: 40px; height: 40px; }
+.cloud-3 .cloud-part:nth-child(2) { width: 60px; height: 60px; margin-left: -10px; }
+.cloud-3 .cloud-part:nth-child(3) { width: 45px; height: 45px; margin-left: -10px; }
+
+/* Ocean */
+.ocean {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(
+    to bottom,
+    #4682b4 0%,
+    #1e40af 50%,
+    #1e3a8a 100%
+  );
+  overflow: hidden;
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 100px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120'%3E%3Cpath d='M0,60 C300,120 900,0 1200,60 L1200,120 L0,120 Z' fill='%23ffffff' fill-opacity='0.1'/%3E%3C/svg%3E") repeat-x;
+  animation: waveMove 15s ease-in-out infinite;
+}
+
+.wave-1 {
+  bottom: 20px;
+  animation-duration: 15s;
+  opacity: 0.3;
+}
+
+.wave-2 {
+  bottom: 10px;
+  animation-duration: 20s;
+  animation-delay: -5s;
+  opacity: 0.2;
+}
+
+.wave-3 {
+  bottom: 0px;
+  animation-duration: 25s;
+  animation-delay: -10s;
+  opacity: 0.1;
+}
+
+/* Ships */
+.ships-container {
+  position: absolute;
+  bottom: 15%;
+  left: 0;
+  width: 100%;
+  height: 25%;
+}
+
+.ship {
+  position: absolute;
+  bottom: 0;
+}
+
+.ship-body {
+  width: 80px;
+  height: 15px;
+  background: #8b4513;
+  border-radius: 0 0 40px 40px;
+  position: relative;
+}
+
+.ship-body::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: -5px;
+  width: 90px;
+  height: 8px;
+  background: #654321;
+  border-radius: 0 0 45px 45px;
+}
+
+.ship-mast {
+  position: absolute;
+  left: 35px;
+  bottom: 15px;
+  width: 3px;
+  height: 40px;
+  background: #8b4513;
+}
+
+.ship-sail {
+  position: absolute;
+  left: 38px;
+  bottom: 25px;
+  width: 25px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 0 15px 15px 0;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.ship-1 {
+  left: 20%;
+  animation: shipBob1 8s ease-in-out infinite;
+}
+
+.ship-2 {
+  left: 60%;
+  animation: shipBob2 10s ease-in-out infinite;
+  transform: scale(0.8);
+}
+
+.ship-3 {
+  left: 85%;
+  animation: shipBob3 12s ease-in-out infinite;
+  transform: scale(0.6);
+}
+
+/* Animations */
+@keyframes sunGlow {
+  0%, 100% { 
+    box-shadow: 0 0 50px rgba(255, 215, 0, 0.6);
+    transform: scale(1);
+  }
+  50% { 
+    box-shadow: 0 0 80px rgba(255, 215, 0, 0.8);
+    transform: scale(1.05);
+  }
+}
+
+@keyframes sunRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes cloudFloat1 {
+  0%, 100% { transform: translateX(0px) translateY(0px); }
+  25% { transform: translateX(30px) translateY(-10px); }
+  50% { transform: translateX(60px) translateY(0px); }
+  75% { transform: translateX(30px) translateY(10px); }
+}
+
+@keyframes cloudFloat2 {
+  0%, 100% { transform: translateX(0px) translateY(0px); }
+  33% { transform: translateX(-40px) translateY(-15px); }
+  66% { transform: translateX(-80px) translateY(5px); }
+}
+
+@keyframes cloudFloat3 {
+  0%, 100% { transform: translateX(0px) translateY(0px); }
+  50% { transform: translateX(-100px) translateY(-20px); }
+}
+
+@keyframes waveMove {
+  0% { transform: translateX(0px); }
+  100% { transform: translateX(-600px); }
+}
+
+@keyframes shipBob1 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-5px) rotate(1deg); }
+  50% { transform: translateY(-3px) rotate(0deg); }
+  75% { transform: translateY(-7px) rotate(-1deg); }
+}
+
+@keyframes shipBob2 {
+  0%, 100% { transform: scale(0.8) translateY(0px) rotate(0deg); }
+  30% { transform: scale(0.8) translateY(-4px) rotate(-1deg); }
+  60% { transform: scale(0.8) translateY(-2px) rotate(1deg); }
+}
+
+@keyframes shipBob3 {
+  0%, 100% { transform: scale(0.6) translateY(0px) rotate(0deg); }
+  40% { transform: scale(0.6) translateY(-3px) rotate(1deg); }
+  80% { transform: scale(0.6) translateY(-1px) rotate(-1deg); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sun {
+    width: 80px;
+    height: 80px;
+    top: 8%;
+    right: 10%;
+  }
+  
+  .sun-rays {
+    width: 120px;
+    height: 120px;
+    top: -20px;
+    left: -20px;
+  }
+  
+  .cloud-1, .cloud-2, .cloud-3 {
+    transform: scale(0.7);
+  }
+  
+  .ship {
+    transform: scale(0.7);
+  }
+  
+  .ship-2 {
+    transform: scale(0.5);
+  }
+  
+  .ship-3 {
+    transform: scale(0.4);
+  }
+}

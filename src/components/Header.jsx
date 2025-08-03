@@ -26,7 +26,16 @@ export default function Navbar({ fixed }) {
         </div>
         <div className='container-item'>
           <div className='nav-item'>
-           
+            <Link to='/theme-showcase' style={{ 
+              color: 'white', 
+              textDecoration: 'none', 
+              marginRight: '20px',
+              fontSize: '14px',
+              opacity: 0.8,
+              transition: 'opacity 0.3s ease'
+            }}>
+              🎨 Themes
+            </Link>
           </div>
           <div className='nav-item'>
             <div className='heading__sub heading-user'>

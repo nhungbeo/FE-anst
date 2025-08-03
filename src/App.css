@@ -4,6 +4,7 @@
 @import './components/responsive.css';
 @import './components/animations.css';
 @import './components/Theme/theme.css';
+@import './components/Theme/sun-theme.css';
 
 * {
   margin: 0;
