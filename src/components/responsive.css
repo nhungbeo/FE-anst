@@ -1,0 +1,106 @@
+/* Responsive Design */
+@media (max-width: 768px) {
+  .App {
+    padding: 0 10px;
+  }
+  
+  .study {
+    margin: 10px auto;
+    padding: 15px;
+    max-width: 100%;
+  }
+  
+  .headerStudy nav {
+    padding: 0 10px;
+  }
+  
+  .heading {
+    font-size: 24px;
+    letter-spacing: 1px;
+  }
+  
+  .textmeno {
+    font-size: 20px;
+  }
+  
+  .inputAddTask {
+    font-size: 16px;
+    padding: 12px 15px;
+  }
+  
+  .display--button {
+    font-size: 12px;
+    padding: 6px 12px;
+    margin-bottom: 10px;
+  }
+  
+  .display--button + .display--button {
+    margin-left: 10px;
+  }
+  
+  .children {
+    padding: 10px;
+  }
+  
+  .toogle {
+    height: 60px;
+    width: 120px;
+    border-radius: 30px;
+  }
+  
+  .notch {
+    height: 50px;
+    width: 50px;
+    top: 5px;
+    left: 5px;
+  }
+  
+  .night > .notch {
+    transform: translate(55px, 0);
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: 20px;
+  }
+  
+  .study {
+    padding: 10px;
+    border-radius: 15px;
+  }
+  
+  .display--button {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+  
+  .btnSave, .btnSimple {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+}
+
+/* Dark mode improvements */
+@media (prefers-color-scheme: dark) {
+  .study {
+    background: rgba(30, 30, 30, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .textmeno {
+    color: #818cf8;
+  }
+  
+  .inputAddTask {
+    background: rgba(30, 30, 30, 0.9);
+    color: #ffffff;
+    border-color: rgba(129, 140, 248, 0.3);
+  }
+  
+  .textarea-note {
+    background: rgba(30, 30, 30, 0.9);
+    color: #ffffff;
+    border-color: rgba(129, 140, 248, 0.3);
+  }
+}

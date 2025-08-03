@@ -1,44 +1,90 @@
 .modeCSS {
   text-align: center;
   display: flex;
-  padding: 10%;
+  padding: 5%;
+  justify-content: center;
+  align-items: center;
 }
+
 .toogle {
-  height: 100px;
-  width: 200px;
-  border-radius: 50px;
+  height: 80px;
+  width: 160px;
+  border-radius: 40px;
   margin: auto;
-  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR25DvvPFonURydUpLR-1apzik441ylitwLyQ&usqp=CAU');
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
   position: relative;
   cursor: pointer;
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  animation: float 4s ease-in-out infinite;
+  overflow: hidden;
+}
+
+.toogle::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: rotate 4s linear infinite;
+  z-index: 0;
+}
+
+.toogle:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 15px 40px rgba(255, 215, 0, 0.5);
+  animation: bounce 0.6s ease, glow 2s ease-in-out infinite;
+}
+
+.toogle:active {
+  transform: scale(0.95);
+  transition: all 0.1s ease;
 }
 
 .toggle.night {
-  background-image: linear-gradient(midnightblue, rebeccapurple);
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  box-shadow: 0 8px 25px rgba(44, 62, 80, 0.4);
 }
 
 .night > .notch {
-  background-image: url('./../../../public/toggleOff.png');
-  /* background-color:#ffc107; */
+  background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%);
   background-size: cover;
-  box-shadow: 0 0 5px whitesmoke;
-  transform: translate(100px, 0);
-  background-color: #f0f8ff00;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+  transform: translate(75px, 0);
 }
 
 .notch {
-
-  height: 90px;
-  width: 90px;
+  height: 70px;
+  width: 70px;
   border-radius: 50%;
-  background-color: aliceblue;
-  /* background-image: url('https://i.pinimg.com/236x/fa/d3/72/fad372b93478dfb037a62e41d1f97660.jpg'); */
-  /* background-image: url("../../../public/bee.png"); */
+  background: linear-gradient(135deg, #fff9c4 0%, #ffd700 100%);
   background-size: cover;
   position: absolute;
   top: 5px;
   left: 5px;
-  box-shadow: 0 0 5px yellow;
-  z-index: 1;
-  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.5);
+  z-index: 2;
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.notch::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, #ffed4e, #ffd700);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: float 2s ease-in-out infinite reverse;
+}
+
+.notch:hover {
+  animation: shake 0.5s ease-in-out;
 }

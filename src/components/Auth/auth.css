@@ -59,12 +59,23 @@
   margin-bottom: 10px;
 }
 .submit-form{
-  padding: 5px 30px;
+  padding: 12px 32px;
   font-weight: 600;
-  background-color: #00b894;
-  color: whitesmoke;
-  border-radius: 6px;
-  border-color: #74b9ff;
+  background: linear-gradient(135deg, #00b894 0%, #00a085 100%);
+  color: #ffffff;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 184, 148, 0.3);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 14px;
+}
+
+.submit-form:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 184, 148, 0.4);
 }
 .modal-content {
  font-family:cursive;
