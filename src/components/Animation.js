@@ -13,6 +13,7 @@ import ModalSignUp from './Auth/ModalSignUp';
 import ModalSignIn from './Auth/ModalSignIn';
 import Authentication from './Auth/Loggin';
 import Profile from './Report/Profile';
+import ThemeDemo from './Theme/ThemeDemo';
 
 
 
@@ -54,6 +55,10 @@ function Animation() {
         <Route
           path='/authentication'
           element={<Authentication />}
+        />
+        <Route
+          path='/theme-demo'
+          element={<ThemeDemo />}
         />
         <Route
           path='*'

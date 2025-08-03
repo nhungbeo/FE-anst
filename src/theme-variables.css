@@ -1,0 +1,70 @@
+/* CSS Variables for Theme System */
+:root {
+  /* Default Light Theme Colors */
+  --color-primary: #4f46e5;
+  --color-secondary: #7c3aed;
+  --color-background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --color-surface: rgba(255, 255, 255, 0.95);
+  --color-text: #333333;
+  --color-textSecondary: #666666;
+  --color-border: rgba(79, 70, 229, 0.2);
+  --color-shadow: rgba(0, 0, 0, 0.1);
+  
+  /* Additional theme variables */
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #0ea5e9;
+  
+  /* Spacing and sizing */
+  --border-radius: 12px;
+  --border-radius-lg: 20px;
+  --border-radius-sm: 8px;
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 4px var(--color-shadow);
+  --shadow-md: 0 4px 15px var(--color-shadow);
+  --shadow-lg: 0 8px 25px var(--color-shadow);
+  --shadow-xl: 0 20px 40px var(--color-shadow);
+}
+
+/* Theme-aware utility classes */
+.theme-surface {
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.theme-primary {
+  background: var(--color-primary);
+  color: white;
+}
+
+.theme-secondary {
+  background: var(--color-secondary);
+  color: white;
+}
+
+.theme-text {
+  color: var(--color-text);
+}
+
+.theme-text-secondary {
+  color: var(--color-textSecondary);
+}
+
+.theme-border {
+  border-color: var(--color-border);
+}
+
+.theme-shadow {
+  box-shadow: var(--shadow-md);
+}
+
+.theme-shadow-lg {
+  box-shadow: var(--shadow-lg);
+}

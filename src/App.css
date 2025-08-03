@@ -1,7 +1,9 @@
+@import './theme-variables.css';
 @import './components/Toggle/style.css';
 @import './components/Study/study.css';
 @import './components/responsive.css';
 @import './components/animations.css';
+@import './components/Theme/theme.css';
 
 * {
   margin: 0;
@@ -11,15 +13,16 @@
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--color-background);
   background-attachment: fixed;
   min-height: 100vh;
   width: 100%;
   margin: 0;
   text-decoration: none;
-  color: #333;
+  color: var(--color-text);
   line-height: 1.6;
   overflow-x: hidden;
+  transition: background var(--transition-normal), color var(--transition-normal);
 }
 
 body::before {
@@ -57,8 +60,8 @@ img {
   line-height: 1.4;
   letter-spacing: 0.5px;
   font-weight: 700;
-  color: #4f46e5;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  color: var(--color-primary);
+  text-shadow: 0 2px 4px var(--color-shadow);
 }
 
 a {
@@ -74,13 +77,14 @@ a:hover {
   padding: 20px;
   max-width: 700px;
   margin: 20px auto;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  background: var(--color-surface);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-xl);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--color-border);
   animation: fadeInUp 0.8s ease-out;
-  transition: all 0.3s ease;
+  transition: all var(--transition-normal);
+  color: var(--color-text);
 }
 
 .study:hover {
@@ -113,11 +117,11 @@ a:hover {
   border-radius: 1px;
 }
 .inputAddTask {
-  border-radius: 12px;
+  border-radius: var(--border-radius);
   font-size: 18px;
   padding: 15px 20px;
-  border: 2px solid rgba(79, 70, 229, 0.2);
-  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid var(--color-border);
+  background: var(--color-surface);
   backdrop-filter: blur(10px);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   outline: none;
@@ -125,13 +129,14 @@ a:hover {
   font-weight: 500;
   position: relative;
   animation: slideInLeft 0.6s ease-out;
+  color: var(--color-text);
 }
 
 .inputAddTask:focus {
-  border-color: #4f46e5;
-  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1), 0 8px 25px rgba(79, 70, 229, 0.15);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-border), var(--shadow-lg);
   transform: translateY(-3px) scale(1.02);
-  background: rgba(255, 255, 255, 1);
+  background: var(--color-surface);
 }
 
 .inputAddTask:hover {
@@ -153,14 +158,14 @@ a:hover {
   font-size: 14px;
   height: auto;
   cursor: pointer;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  box-shadow: var(--shadow-md);
   color: #ffffff;
   opacity: 1;
   font-weight: 600;
   padding: 8px 16px;
   border: none;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all var(--transition-normal);
   text-transform: uppercase;
   letter-spacing: 0.5px;
   position: relative;
@@ -183,8 +188,8 @@ a:hover {
 }
 .active,
 .display--button:hover {
-  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
-  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  box-shadow: var(--shadow-lg);
   color: #ffffff;
   transform: translateY(-3px) scale(1.05);
   font-weight: 700;
