@@ -15,6 +15,7 @@ import Authentication from './Auth/Loggin';
 import Profile from './Report/Profile';
 import ThemeDemo from './Theme/ThemeDemo';
 import ThemeShowcase from './Theme/ThemeShowcase';
+import HeaderDemo from './HeaderDemo';
 
 
 
@@ -64,6 +65,10 @@ function Animation() {
         <Route
           path='/theme-showcase'
           element={<ThemeShowcase />}
+        />
+        <Route
+          path='/header-demo'
+          element={<HeaderDemo />}
         />
         <Route
           path='*'
