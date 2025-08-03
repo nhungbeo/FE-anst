@@ -6,6 +6,7 @@
 @import './components/Theme/theme.css';
 @import './components/Theme/sun-theme.css';
 @import './components/Report/profile-modern.css';
+@import './components/BackgroundCustomizer/background-customizer.css';
 
 * {
   margin: 0;

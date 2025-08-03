@@ -27,17 +27,21 @@ import {
   FiSettings,
   FiAward,
   FiTarget,
-  FiTrendingUp
+  FiTrendingUp,
+  FiImage
 } from 'react-icons/fi';
 import ShowModal from '../Study/ShowModal';
 import UploadStudyImage from '../User/UploadStudyImage';
 import UploadAvatar from '../User/UploadAvatar';
 import Loading from '../Loading';
+import BackgroundCustomizer from '../BackgroundCustomizer/BackgroundCustomizer';
+import { openCustomizer, closeCustomizer } from '../../features/background/backgroundSlice';
 
 function Profile() {
   const dispatch = useDispatch();
   const taskState = useSelector((state) => state.task);
   const userState = useSelector((state) => state.user);
+  const backgroundState = useSelector((state) => state.background);
   const STORE = useSelector((state) => state);
   useEffect(() => {
     dispatch(getUserAPI());
@@ -247,6 +251,16 @@ function Profile() {
               {!STORE.user.getUserAPI.isLoading && <ShowImageStudy />}
             </div>
             <div className='cover-overlay'></div>
+            
+            {/* Background Customizer Button */}
+            <button 
+              className='customize-bg-btn'
+              onClick={() => dispatch(openCustomizer())}
+              title='Customize Background'
+            >
+              <FiImage />
+              <span>Change Background</span>
+            </button>
           </div>
           
           {/* User Profile Card */}
@@ -282,6 +296,16 @@ function Profile() {
               )}
             </div>
             <div className='guest-cover-overlay'></div>
+            
+            {/* Background Customizer Button for Guests */}
+            <button 
+              className='customize-bg-btn guest'
+              onClick={() => dispatch(openCustomizer())}
+              title='Customize Background'
+            >
+              <FiImage />
+              <span>Try Custom Background</span>
+            </button>
           </div>
 
           {/* Guest Welcome Section */}
@@ -302,6 +326,12 @@ function Profile() {
           </div>
         </div>
       )}
+      
+      {/* Background Customizer Modal */}
+      <BackgroundCustomizer 
+        isOpen={backgroundState.isCustomizerOpen}
+        onClose={() => dispatch(closeCustomizer())}
+      />
     </div>
   );
 }

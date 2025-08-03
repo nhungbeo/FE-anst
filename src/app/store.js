@@ -13,6 +13,7 @@ import apexChartReducer from '../features/data/ApexChartSlice';
 import taskReducer from '../features/data/TaskSlice';
 import userReducer from '../features/user/userSlice'
 import themeReducer from '../features/theme/themeSlice'
+import backgroundReducer from '../features/background/backgroundSlice'
 
 const rootReducer = combineReducers({
   counter: counterReducer,
@@ -24,6 +25,7 @@ const rootReducer = combineReducers({
   user: userReducer,
   authStatus: authStatusReducer,
   theme: themeReducer,
+  background: backgroundReducer,
 });
 
 export const store = configureStore({
