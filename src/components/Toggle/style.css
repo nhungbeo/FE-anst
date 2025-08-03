@@ -19,6 +19,7 @@
   border: 3px solid rgba(255, 255, 255, 0.2);
   animation: float 4s ease-in-out infinite;
   overflow: hidden;
+  z-index: 10;
 }
 
 .toogle::before {
@@ -31,6 +32,7 @@
   background: conic-gradient(transparent, rgba(255, 255, 255, 0.3), transparent);
   animation: rotate 4s linear infinite;
   z-index: 0;
+  pointer-events: none;
 }
 
 .toogle:hover {
@@ -44,16 +46,25 @@
   transition: all 0.1s ease;
 }
 
-.toggle.night {
+.toogle.night {
   background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
   box-shadow: 0 8px 25px rgba(44, 62, 80, 0.4);
 }
 
-.night > .notch {
-  background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%);
+.toogle.night > .notch {
+  background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%) !important;
   background-size: cover;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
-  transform: translate(75px, 0);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6) !important;
+  transform: translate(85px, 0px) !important;
+  animation: none !important;
+}
+
+.night > .notch {
+  background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%) !important;
+  background-size: cover;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6) !important;
+  transform: translate(85px, 0px) !important;
+  animation: none !important;
 }
 
 .notch {
@@ -66,10 +77,11 @@
   top: 5px;
   left: 5px;
   box-shadow: 0 4px 15px rgba(255, 215, 0, 0.5);
-  z-index: 2;
-  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: 12;
+  transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55), background 0.3s ease, box-shadow 0.3s ease;
   border: 2px solid rgba(255, 255, 255, 0.3);
-  animation: pulse 3s ease-in-out infinite;
+  pointer-events: none;
+  transform: translate(0px, 0px);
 }
 
 .notch::before {
@@ -83,6 +95,7 @@
   border-radius: 50%;
   transform: translate(-50%, -50%);
   animation: float 2s ease-in-out infinite reverse;
+  pointer-events: none;
 }
 
 .notch:hover {
