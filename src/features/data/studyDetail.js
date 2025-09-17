@@ -1,30 +1,32 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { PREFIX } from "../../util/fetchData";
+
+const API_URL = PREFIX.replace(/\/+$/, "");
 
 export const fetchUsers = createAsyncThunk(
-  'users/fetchUsersStatus',
+  "users/fetchUsersStatus",
   async () => {
-    const response = await fetch('http://localhost:3333/test');
+    const response = await fetch(`${API_URL}/test`);
     const data = await response.json();
     console.log(data);
     return data;
   }
 );
 const studySlice = createSlice({
-  name: 'study',
+  name: "study",
   initialState: {
     modeOn: false,
     taskForm: false,
-    active:{
-      toogle: 'active',
-      youtube: '',
-      image:'',
+    active: {
+      toogle: "active",
+      youtube: "",
+      image: "",
     },
     task: {
-      name: 'Task...',
-      countDown: 25 ,
+      name: "Task...",
+      countDown: 25,
     },
-    feedback:{
-    }
+    feedback: {},
   },
   reducers: {
     showTaskForm: (state) => {
@@ -36,7 +38,6 @@ const studySlice = createSlice({
     addTask: (state, action) => {
       state.task = action.payload;
     },
-
   },
   extraReducers: {
     [fetchUsers.fulfilled]: (state, action) => {
@@ -50,6 +51,7 @@ const studySlice = createSlice({
     },
   },
 });
-export const { showTaskForm,activeYoutube, activeImage, activeToogle, linkYoutube, resetForm ,addTask} = studySlice.actions;
+export const { showTaskForm, activeYoutube, activeImage, activeToogle, linkYoutube, resetForm, addTask } =
+  studySlice.actions;
 export const { reducer: user } = studySlice;
 export default user;

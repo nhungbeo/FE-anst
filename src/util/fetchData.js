@@ -1,20 +1,21 @@
-export const PREFIX = 'https://dark-teal-squirrel-belt.cyclic.app';
-// export const PREFIX = 'http://localhost:3333';
+const DEFAULT_API_URL = "https://dark-teal-squirrel-belt.cyclic.app";
 
-//GET REQUEST
+export const PREFIX = import.meta?.env?.VITE_API_URL ?? DEFAULT_API_URL;
+
+// GET REQUEST
 export const getData = async (path, token) => {
   const url = PREFIX + path;
   try {
     // Send GET request to server with user token
     const response = await fetch(url, {
-      method: 'GET',
+      method: "GET",
       headers: {
-        Authentication: 'Bearer ' + token,
+        Authentication: "Bearer " + token,
       },
     });
     const data = await response.json();
 
-    //Check if response ok or not
+    // Check if response ok or not
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
@@ -23,22 +24,23 @@ export const getData = async (path, token) => {
     console.log(error);
   }
 };
-//POST REQUEST
+
+// POST REQUEST
 export const postData = async (path, token, value) => {
   const url = PREFIX + path;
   try {
     // Send POST request to server with user token
     const response = await fetch(url, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'multipart/form-data',
-        Authentication: 'Bearer ' + token,
+        "Content-Type": "multipart/form-data",
+        Authentication: "Bearer " + token,
       },
       body: JSON.stringify(value),
     });
     const data = await response.json();
 
-    //Check if response ok or not
+    // Check if response ok or not
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }

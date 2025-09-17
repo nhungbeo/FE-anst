@@ -4,12 +4,10 @@ import { motion } from 'framer-motion';
 import { useDispatch, useSelector } from 'react-redux';
 import { showTaskForm, addTask } from '../../features/data/studyDetail';
 import { actions } from '../../features/toogle/toogleSlice';
-import { ggChart } from '../../features/data/GoogleCharSlice';
 import { useNavigate } from 'react-router-dom';
 import { getTask } from '../../features/data/TaskSlice';
 import users, {
   getUserAPI,
-  getDataWithToken,
 } from '../../features/user/userSlice';
 import ShowModal from './ShowModal';
 import Countdown from './Countdown';
@@ -19,7 +17,6 @@ import { AiOutlineCamera } from 'react-icons/ai';
 import { AiFillYoutube } from 'react-icons/ai';
 import Note from './Note';
 import { PREFIX } from '../../util/fetchData';
-import { number } from 'yup/lib/locale';
 
 export default function Study() {
   const dispatch = useDispatch();

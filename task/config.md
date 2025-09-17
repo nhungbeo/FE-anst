@@ -1,0 +1,1 @@
+- task 1: Sửa lại mặc định sau khi npm start thì sẽ chạy cổng 5555

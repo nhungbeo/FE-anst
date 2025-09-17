@@ -4,7 +4,6 @@ import * as Yup from 'yup';
 import './auth.css';
 import axios from 'axios';
 import UserApi from '../../util/api/UserApi';
-import HOST from '../../util/HOST';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';

@@ -1,0 +1,1 @@
+- khi sưửa code sẽ lưu laại đang thưực hiêện task mấy trong file md naào trong thư muục c:\Users\Administrator\Documents\CODE\professional\study\task
